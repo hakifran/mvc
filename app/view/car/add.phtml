@@ -1,0 +1,28 @@
+<?php include VIEW . 'header.phtml';
+  if(array_key_exists('car', $this->view_data)){
+    $data = $this->view_data['car'];
+  }
+?>
+<div class="container">
+<form action="<?php echo $data ? "/car/update" : "/car/create"?>" method="post">
+  <input type="hidden" value="<?php echo $data ? $data['id'] : ''?>" name="id"/>
+ <div class="form-group">
+   <label for="marque">marque:</label>
+   <input type="marque" value="<?php echo $data ? $data['marque'] : ''?>" name="marque" class="form-control" id="marque">
+ </div>
+ <div class="form-group">
+   <label for="serie">serie:</label>
+   <input type="serie" value="<?php echo $data ? $data['serie'] : ''?>" name="serie" class="form-control" id="serie">
+ </div>
+ <div class="form-group">
+   <label for="annee">Annee:</label>
+   <input type="annee" value="<?php echo $data ? $data['annee'] : ''?>" name="annee" class="form-control" id="annee">
+ </div>
+ <div class="form-group">
+   <label for="kilometre">kilometre:</label>
+   <input type="km" value="<?php echo $data ? $data['km'] : ''?>" name="km" class="form-control" id="km">
+ </div>
+ <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<?php include VIEW . 'footer.phtml'; ?>
+</div>

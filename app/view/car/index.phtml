@@ -1,0 +1,42 @@
+<?php include VIEW . 'header.phtml'; ?>
+<div class="container">
+  <a type=""href="/car/add" class="btn btn-primary"> Nouveau </a>
+<h1>
+  car list
+</h1>
+
+<?php
+if(array_key_exists('cars', $this->view_data)){
+  // var_dump($this->view_data['cars']);
+
+  $table = '<table border=1 class="table table-condensed">
+  <thead>
+      <tr>
+        <th>Id</th>
+        <th>Marque</th>
+        <th>Serie</th>
+        <th>Année de Fabrication</th>
+        <th>Km</th>
+        <th>Action</th>
+      </tr>
+    </thead>';
+  foreach (($this->view_data)['cars'] as $car) {
+    $table .= '<tr>';
+    $table .= '<td>'.$car["id"] .'</td>';
+    $table .= '<td>'.$car["marque"] .'</td>';
+    $table .= '<td>'.$car["serie"] .'</td>';
+    $table .= '<td>'.$car["annee"] .'</td>';
+    $table .= '<td>'.$car["km"] .'</td>';
+    $table .= '<td>';
+    $table .= '<a type="" href="/car/edit/'.$car['id'].'" > edit </a>';
+    $table .= '<a type="" href="/car/delete/'.$car['id'].'" > delete </a>';
+    $table .= '</td>';
+    $table .= '</tr>';
+  }
+  $table .= '</table>';
+  echo $table;
+}
+
+?>
+<?php include VIEW . 'footer.phtml'; ?>
+</div>

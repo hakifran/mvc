@@ -1,0 +1,6 @@
+1,honda,Civic,2018,125463545
+2,honda,Civic,2018,125463545
+3,honda,Civic,2018,125463545
+4,honda,Civic,2018,125463545
+5,honda,Civic,2018,125463545
+6,honda,Civic,2018,125463545
