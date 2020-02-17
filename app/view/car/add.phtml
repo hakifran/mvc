@@ -1,6 +1,6 @@
 <?php include VIEW . 'header.phtml';
   if(array_key_exists('car', $this->view_data)){
-    $data = $this->view_data['car'];
+    $data = $this->view_data['car'] ? $this->view_data['car'] : null;
   }
 ?>
 <div class="container">
